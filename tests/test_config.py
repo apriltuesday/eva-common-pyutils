@@ -1,5 +1,4 @@
 import os
-from os import environ
 from os.path import join
 
 import pytest
@@ -29,6 +28,10 @@ class TestConfiguration(TestCommon):
         assert self.cfg.query('ftp_dir') == '/path/to/ftp/dir'
         assert self.cfg.query('nonexistent_thing') is None
         assert self.cfg.query('submission', 'metadata_spreadsheet') == '/path/to/metadata.xlsx'
+
+    def test_false_like_queries(self):
+        assert self.cfg.query('false_like', 'zero') == 0
+        assert self.cfg.query('false_like', 'f') is False
 
     def test_contains(self):
         assert 'ftp_dir' in self.cfg

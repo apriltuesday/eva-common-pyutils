@@ -1,4 +1,6 @@
-
+false_like:
+  zero: 0
+  f: False
 
 ftp_dir: '/path/to/ftp/dir'
 eload_dir: '/path/to/eload/dir'

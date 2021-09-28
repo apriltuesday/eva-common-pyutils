@@ -51,7 +51,7 @@ class Configuration:
 
         for p in parts:
             item = top_level.get(p)
-            if item:
+            if item is not None:
                 top_level = item
             else:
                 return ret_default
